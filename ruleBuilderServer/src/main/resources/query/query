@@ -1,0 +1,9 @@
+Create Table rule
+(
+ruleNo Int auto_increment Primary Key,
+result varchar(20) Not Null,
+`explain` varchar (10)Not Null,
+column1 varchar(50)Not Null,
+column2 varchar(25)Not Null
+)
+ENGINE=INNODB;
