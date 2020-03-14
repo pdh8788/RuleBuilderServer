@@ -15,10 +15,11 @@
     <!-- 자신의 PC(로컬)에 MySql을 설치했을 경우 -->
     <bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-        <property name="url"
-            value="jdbc:mysql://127.0.0.1:3306/rulebuilder?useSSL=false&amp;serverTimezone=UTC">
-        </property>
+<!--    <property name="url" value="jdbc:mysql://127.0.0.1:3306/rulebuilder?useSSL=false&amp;serverTimezone=UTC" />  -->
+        <property name="url" value="jdbc:log4jdbc:mysql://127.0.0.1:3306/rulebuilder?useSSL=false&amp;serverTimezone=UTC" />
+<!--    <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property> !--> 
+        <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+
         <property name="username" value="pdh"></property>
         <property name="password" value="q1w2e3r4!!"></property>
     </bean>        
@@ -32,5 +33,8 @@
 	 <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
+	
+	<context:component-scan base-package="com.creditline.persistence"></context:component-scan>
+	<context:component-scan base-package="com.creditline.service"></context:component-scan>
 		
 </beans>

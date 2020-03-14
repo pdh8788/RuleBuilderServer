@@ -2,8 +2,28 @@ Create Table rule
 (
 ruleNo Int auto_increment Primary Key,
 result varchar(20) Not Null,
-`explain` varchar (10)Not Null,
+detail varchar (10)Not Null,
 column1 varchar(50)Not Null,
 column2 varchar(25)Not Null
 )
-ENGINE=INNODB;
+ENGINE=INNODB charset utf8;
+
+Create Table employee
+(
+employeeNo Int auto_increment Primary Key,
+ename varchar(40) Not Null,
+id varchar(40) Not Null,
+mobileNum varchar(40) Not Null,
+address varchar(40) 
+)
+ENGINE=INNODB charset utf8;	
+
+commit;
+
+
+
+SELECT EMPLOYEENO, ENAME, ID, MOBILENUM, ADDRESS FROM EMPLOYEE ;
+
+select result, detail, column1, column2 
+from rule
+where ruleNo ='1' ;

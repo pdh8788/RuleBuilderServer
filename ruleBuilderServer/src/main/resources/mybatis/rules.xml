@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rules">
+	<select id="ruleInfo" parameterType="hashmap" resultType="com.creditline.ruleBuilder.ruleFileModel">
+<!-- 		select result, detail, column1, column2 from rule where ruleNo = #{key}  -->
+		select result, detail, column1, column2 from rule
+	</select>
+</mapper>
