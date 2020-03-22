@@ -7,6 +7,21 @@ public class protoModel {
 	private String personId;
 	private String number;
 	private String address;
+	
+	public protoModel(String employeeNo, String name, String personId, String number, String address) {
+		// TODO Auto-generated constructor stub
+		this.employeeNo = employeeNo;
+		this.name = name;
+		this.personId = personId;
+		this.number = number;
+		this.address = address;
+	}
+	
+	public protoModel() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	public String getName() {
 		return name;
 	}

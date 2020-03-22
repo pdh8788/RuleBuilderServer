@@ -5,16 +5,14 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
-import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.creditline.domain.protoModel;
 import com.creditline.service.ProtoService;
@@ -44,6 +42,24 @@ public class protoController {
 		
 		try {
 			entity = new ResponseEntity<>(service.listEmployee(), HttpStatus.OK);
+			
+		} catch (Exception e ) {
+			e.printStackTrace();
+			entity = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		return entity;
+	}
+	
+	@RequestMapping(value = "", method = { RequestMethod.PUT, RequestMethod.PATCH })
+	public ResponseEntity<String> update( @RequestBody protoModel vo)  {
+//		this.reqData = new HashMap<>();
+//		this.reqData.put("EMPLOYEENO", "1");
+		
+		ResponseEntity<String> entity = null;
+		
+		try {
+			service.modifyEmployee(vo);
+			entity = new ResponseEntity<>("SUCCESS", HttpStatus.OK);
 			
 		} catch (Exception e ) {
 			e.printStackTrace();

@@ -9,4 +9,13 @@
 		MOBILENUM AS NUMBER, 
 		ADDRESS FROM EMPLOYEE 
 	</select>
+	
+	<update id="update" parameterType="hashmap" >
+		UPDATE EMPLOYEE 
+		set ENAME = #{name}
+		, ID = #{personId}
+		, MOBILENUM = #{number}
+		, ADDRESS = #{address}
+		where EMPLOYEENO =#{employeeNo}
+	</update>
 </mapper>
