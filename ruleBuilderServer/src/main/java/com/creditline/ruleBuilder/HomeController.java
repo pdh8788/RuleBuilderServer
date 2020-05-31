@@ -39,7 +39,7 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-    	List<ruleFileModel> list = sqlSession.selectList("rules.ruleInfo", this.reqData);
+    	List<RuleFileModel> list = sqlSession.selectList("rules.ruleInfo", this.reqData);
     	
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -56,7 +56,7 @@ public class HomeController {
 		this.reqData = new HashMap<>();
 		this.reqData.put("key", "1");
 		
-		List<ruleFileModel> list = sqlSession.selectList("rules.ruleInfo", this.reqData);
+		List<RuleFileModel> list = sqlSession.selectList("rules.ruleInfo", this.reqData);
 		// ModelAndView - 모델과 뷰
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("home");

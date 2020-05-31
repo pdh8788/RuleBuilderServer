@@ -1,6 +1,6 @@
 package com.creditline.ruleBuilder;
 
-public class ruleFileModel {
+public class RuleFileModel {
 	
 	private String result;
 	private String detail;

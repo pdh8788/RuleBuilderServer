@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rule">
+	<select id="list" parameterType="hashmap" resultType="hashmap">
+		SELECT 
+		RULENO , 
+		RULETEXT, 
+		RULEJSON 
+		FROM RULE 
+	</select>
+	
+	<insert id="insert" parameterType="hashmap">
+		INSERT 
+		INTO RULE VALUES 
+		(
+			#{ruleNo},
+			#{ruleText},
+			#{ruleJson}
+		)
+	</insert>
+	
+	<update id="update" parameterType="hashmap" >
+		UPDATE RULE 
+		RULETEXT = #{ruleText},
+		RULEJSON = #{ruleJson}
+		WHERE RULENO =#{ruleNo}
+	</update>
+	
+	<delete id="delete" parameterType="hashmap" >
+		DELETE FROM RULE 
+		WHERE RULENO =#{ruleNo}
+	</delete>
+	
+	<select id="isExistRule" parameterType="hashmap" resultType="Integer" >
+		SELECT count(*) FROM RULE 
+		WHERE RULENO =#{ruleNo}
+	</select>
+	
+</mapper>

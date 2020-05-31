@@ -30,7 +30,7 @@ public class MyBatisTest
     public void testFactory(){
     	this.reqData = new HashMap<String, String>();
     	reqData.put("key", "1");
-    	List<ruleFileModel> list = sqlSession.selectList("rules.ruleInfo", this.reqData);
+    	List<RuleFileModel> list = sqlSession.selectList("rules.ruleInfo", this.reqData);
     	
     	System.out.println(list.get(0).getResult());
     	

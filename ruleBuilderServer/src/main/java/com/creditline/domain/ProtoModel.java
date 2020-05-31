@@ -1,6 +1,6 @@
 package com.creditline.domain;
 
-public class protoModel {
+public class ProtoModel {
 	
 	private String employeeNo;
 	private String name;
@@ -8,7 +8,7 @@ public class protoModel {
 	private String number;
 	private String address;
 	
-	public protoModel(String employeeNo, String name, String personId, String number, String address) {
+	public ProtoModel(String employeeNo, String name, String personId, String number, String address) {
 		// TODO Auto-generated constructor stub
 		this.employeeNo = employeeNo;
 		this.name = name;
@@ -17,7 +17,7 @@ public class protoModel {
 		this.address = address;
 	}
 	
-	public protoModel() {
+	public ProtoModel() {
 		// TODO Auto-generated constructor stub
 	}
 	

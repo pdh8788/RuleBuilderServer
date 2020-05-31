@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.creditline.domain.protoModel;
+import com.creditline.domain.ProtoModel;
 import com.creditline.service.ProtoService;
 
 /**
@@ -22,23 +22,21 @@ import com.creditline.service.ProtoService;
  */
 @RestController
 @RequestMapping("/protoType")
-public class protoController {
+public class ProtoController {
 	
 	@Inject
 	private ProtoService service;
 	
-	private static final Logger logger = LoggerFactory.getLogger(protoController.class);
+	private static final Logger logger = LoggerFactory.getLogger(ProtoController.class);
 	
 	protected Map<String, String> reqData;
 	
 	
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public ResponseEntity<List<protoModel>> list()  {
-//		this.reqData = new HashMap<>();
-//		this.reqData.put("EMPLOYEENO", "1");
+	public ResponseEntity<List<ProtoModel>> list()  {
 		
-		ResponseEntity<List<protoModel>> entity = null;
+		ResponseEntity<List<ProtoModel>> entity = null;
 		
 		try {
 			entity = new ResponseEntity<>(service.listEmployee(), HttpStatus.OK);
@@ -51,9 +49,7 @@ public class protoController {
 	}
 	
 	@RequestMapping(value = "", method = { RequestMethod.PUT, RequestMethod.PATCH })
-	public ResponseEntity<String> update( @RequestBody protoModel vo)  {
-//		this.reqData = new HashMap<>();
-//		this.reqData.put("EMPLOYEENO", "1");
+	public ResponseEntity<String> update( @RequestBody ProtoModel vo)  {
 		
 		ResponseEntity<String> entity = null;
 		
